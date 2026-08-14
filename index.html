@@ -3,402 +3,548 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Local Vendor Market | Shop Small. Support Local.</title>
 
 <style>
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f7f4ef;
-  color: #292929;
-  line-height: 1.6;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f5ef;
+    color: #243f35;
 }
 
 header {
-  background: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
-
-.nav {
-  max-width: 1100px;
-  margin: auto;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: white;
+    padding: 18px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: 800;
-  color: #244b3b;
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 12px;
 }
 
-.nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  margin-left: 16px;
+.logo span {
+    margin-right: 6px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #243f35;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .hero {
-  background: linear-gradient(135deg, #244b3b, #3d6b54);
-  color: white;
-  text-align: center;
-  padding: 75px 20px;
+    background: linear-gradient(135deg, #173f32, #316d58);
+    color: white;
+    text-align: center;
+    padding: 75px 25px 85px;
+}
+
+.hero .tag {
+    display: inline-block;
+    background: #e8ad38;
+    color: #173f32;
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size: 48px;
-  line-height: 1.1;
-  margin-bottom: 18px;
+    font-size: 44px;
+    line-height: 1.05;
+    margin: 0 0 18px;
 }
 
 .hero h2 {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 18px;
+    font-size: 24px;
+    margin: 0 0 22px;
+    font-weight: 600;
 }
 
 .hero p {
-  max-width: 700px;
-  margin: 0 auto 28px;
-  font-size: 18px;
+    max-width: 650px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.buttons {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
 }
 
 .button {
-  display: inline-block;
-  background: #d9a441;
-  color: white;
-  text-decoration: none;
-  font-weight: 800;
-  padding: 13px 22px;
-  border-radius: 30px;
-  margin: 5px;
+    display: inline-block;
+    padding: 16px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 17px;
+    width: 90%;
+    max-width: 330px;
 }
 
-.button.light {
-  background: white;
-  color: #244b3b;
+.button.gold {
+    background: #e8ad38;
+    color: #173f32;
+}
+
+.button.white {
+    background: white;
+    color: #244d3e;
 }
 
 section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
+    padding: 65px 22px;
+    max-width: 1100px;
+    margin: auto;
 }
 
 .section-title {
-  text-align: center;
-  color: #244b3b;
-  font-size: 34px;
-  margin-bottom: 12px;
+    text-align: center;
+    font-size: 34px;
+    margin: 0 0 15px;
+    color: #244d3e;
 }
 
 .section-subtitle {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 35px;
-  color: #666;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #555;
 }
 
-.about {
-  text-align: center;
-  background: white;
-  max-width: 900px;
-  border-radius: 20px;
-  padding: 40px 25px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+.about-box {
+    background: white;
+    border-radius: 25px;
+    padding: 38px 28px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+    text-align: center;
 }
 
-.about p {
-  font-size: 18px;
-  margin-bottom: 15px;
+.about-box h2 {
+    font-size: 30px;
+    margin-top: 0;
+}
+
+.about-box p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
 }
 
 .events {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+    background: #eeeade;
+    max-width: none;
 }
 
-.event {
-  background: white;
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-  border-top: 5px solid #d9a441;
+.events-inner {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 22px;
+    padding: 25px;
+    box-shadow: 0 7px 22px rgba(0,0,0,.08);
+    border-top: 6px solid #e8ad38;
 }
 
 .event-date {
-  color: #244b3b;
-  font-weight: 800;
-  font-size: 19px;
-  margin-bottom: 8px;
+    color: #d49218;
+    font-weight: 800;
+    font-size: 17px;
+    margin-bottom: 10px;
 }
 
-.event-location {
-  font-weight: 700;
-  margin-bottom: 5px;
+.event-card h3 {
+    margin: 0 0 10px;
+    color: #244d3e;
+    font-size: 22px;
 }
 
-.event-city {
-  color: #777;
+.event-card p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+.vendor-section {
+    background: #244d3e;
+    color: white;
+    max-width: none;
+    text-align: center;
 }
 
-.card {
-  background: white;
-  border-radius: 18px;
-  padding: 30px 22px;
-  text-align: center;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+.vendor-section h2 {
+    font-size: 34px;
+    margin-top: 0;
 }
 
-.card-icon {
-  font-size: 40px;
-  margin-bottom: 12px;
+.vendor-section p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 1.7;
 }
 
-.card h3 {
-  color: #244b3b;
-  margin-bottom: 8px;
+.vendor-button {
+    display: inline-block;
+    background: #e8ad38;
+    color: #173f32;
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: 40px;
+    font-weight: 800;
+    font-size: 17px;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.value {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+
+.value-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.value strong {
+    display: block;
+    color: #244d3e;
 }
 
 .cta {
-  background: #244b3b;
-  color: white;
-  text-align: center;
-  max-width: none;
-  padding: 65px 20px;
+    background: #f0e5c8;
+    text-align: center;
+    border-radius: 30px;
 }
 
 .cta h2 {
-  font-size: 34px;
-  margin-bottom: 12px;
+    font-size: 32px;
+    margin-top: 0;
 }
 
 .cta p {
-  max-width: 650px;
-  margin: 0 auto 22px;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 25px;
 }
 
 footer {
-  background: #1d3027;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
+    background: #173f32;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
 }
 
-footer strong {
-  color: #d9a441;
+footer h3 {
+    font-size: 22px;
+    margin-top: 0;
 }
 
-@media (max-width: 650px) {
-  .nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav a {
-    font-size: 14px;
-    margin: 0 6px;
-  }
-
-  .hero {
-    padding: 55px 18px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero h2 {
-    font-size: 21px;
-  }
-
-  .section-title {
-    font-size: 29px;
-  }
+footer p {
+    margin: 8px 0;
+    opacity: .9;
 }
+
+@media (min-width: 700px) {
+
+    .hero h1 {
+        font-size: 62px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .button {
+        width: auto;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">🛍️ Local Vendor Market</div>
-    <div>
-      <a href="#events">Events</a>
-      <a href="#vendors">Vendors</a>
-      <a href="#about">About</a>
+
+    <div class="logo">
+        <span>🛍️</span> Local Vendor Market
     </div>
-  </div>
+
+    <nav>
+        <a href="#events">Events</a>
+        <a href="#vendors">Vendors</a>
+        <a href="#about">About</a>
+    </nav>
+
 </header>
 
-<section class="hero">
-  <h1>Local Vendor Market</h1>
-  <h2>Shop Small. Support Local.</h2>
-  <p>
-    Bringing small businesses, local vendors, families, and communities
-    together across East Texas.
-  </p>
 
-  <a class="button" href="#events">See Upcoming Events</a>
-  <a class="button light" href="#vendors">Become a Vendor</a>
+<section class="hero">
+
+    <div class="tag">EAST TEXAS • SHOP SMALL • SUPPORT LOCAL</div>
+
+    <h1>Local Vendor Market</h1>
+
+    <h2>Shop Small. Support Local. ❤️</h2>
+
+    <p>
+        Bringing small businesses, local vendors, families,
+        and communities together across East Texas.
+    </p>
+
+    <div class="buttons">
+
+        <a class="button gold" href="#events">
+            🛍️ See Upcoming Events
+        </a>
+
+        <a class="button white" href="#vendors">
+            🤝 Become a Vendor
+        </a>
+
+    </div>
+
 </section>
+
 
 <section id="about">
-  <div class="about">
-    <h2 class="section-title">More Than a Market ❤️</h2>
 
-    <p>
-      Local Vendor Market is a traveling local market created to give
-      small businesses a place to connect with their communities,
-      showcase what they offer, and grow.
+    <div class="about-box">
+
+        <h2>More Than a Market ❤️</h2>
+
+        <p>
+            Local Vendor Market is a traveling local market created
+            to give small businesses a place to connect with their
+            communities, meet new customers, and grow.
+        </p>
+
+        <p>
+            We believe in shopping small, supporting local,
+            and creating opportunities for our communities
+            to come together.
+        </p>
+
+    </div>
+
+    <div class="values">
+
+        <div class="value">
+            <div class="value-icon">🛍️</div>
+            <strong>Shop Small</strong>
+        </div>
+
+        <div class="value">
+            <div class="value-icon">❤️</div>
+            <strong>Support Local</strong>
+        </div>
+
+        <div class="value">
+            <div class="value-icon">🤝</div>
+            <strong>Build Community</strong>
+        </div>
+
+        <div class="value">
+            <div class="value-icon">📍</div>
+            <strong>East Texas</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="events" id="events">
+
+<div class="events-inner">
+
+    <h2 class="section-title">🛍️ Upcoming Events</h2>
+
+    <p class="section-subtitle">
+        Come shop, eat, connect, and support amazing local businesses
+        at one of our upcoming markets!
     </p>
 
-    <p>
-      We believe in shopping small, supporting local, and creating
-      opportunities for entrepreneurs across East Texas.
-    </p>
+    <div class="event-grid">
 
-    <p><strong>Christian & Veteran Owned</strong></p>
-  </div>
-</section>
 
-<section id="events">
-  <h2 class="section-title">🛍️ Upcoming Events</h2>
-  <p class="section-subtitle">
-    Mark your calendar and come shop with your favorite local businesses!
-  </p>
+        <div class="event-card">
+            <div class="event-date">SEPTEMBER 5, 2026</div>
+            <h3>Stillwater RV Resort</h3>
+            <p>📍 Winona, TX</p>
+        </div>
 
-  <div class="events">
 
-    <div class="event">
-      <div class="event-date">September 5, 2026</div>
-      <div class="event-location">Stillwater RV Resort</div>
-      <div class="event-city">📍 Winona, TX</div>
+        <div class="event-card">
+            <div class="event-date">SEPTEMBER 12, 2026</div>
+            <h3>Henderson Civic Center</h3>
+            <p>📍 Henderson, TX</p>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-date">SEPTEMBER 19, 2026</div>
+            <h3>Holy Grounds Food Yard & Mercantile</h3>
+            <p>📍 Royse City, TX</p>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-date">SEPTEMBER 26, 2026</div>
+            <h3>The Fun Hub with Big Bass Bingo</h3>
+            <p>📍 Yantis, TX</p>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-date">OCTOBER 3, 2026</div>
+            <h3>Stillwater RV Resort</h3>
+            <p>📍 Winona, TX</p>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-date">OCTOBER 10, 2026</div>
+            <h3>Holy Grounds Food Yard & Mercantile</h3>
+            <p>📍 Royse City, TX</p>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-date">OCTOBER 17, 2026</div>
+            <h3>The Gathering Cup</h3>
+            <p>📍 Tyler, TX</p>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-date">OCTOBER 24, 2026</div>
+            <h3>The Fun Hub with Big Bass Bingo</h3>
+            <p>📍 Yantis, TX</p>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-date">OCTOBER 31, 2026</div>
+            <h3>Circle M Crawfish</h3>
+            <p>📍 Big Sandy, TX</p>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-date">NOVEMBER 7, 2026</div>
+            <h3>Stillwater RV Resort</h3>
+            <p>📍 Winona, TX</p>
+        </div>
+
+
     </div>
 
-    <div class="event">
-      <div class="event-date">September 12, 2026</div>
-      <div class="event-location">Henderson Civic Center</div>
-      <div class="event-city">📍 Henderson, TX</div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">September 19, 2026</div>
-      <div class="event-location">Holy Grounds Food Yard & Mercantile</div>
-      <div class="event-city">📍 Royse City, TX</div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">September 26, 2026</div>
-      <div class="event-location">The Fun Hub with Big Bass Bingo</div>
-      <div class="event-city">📍 Yantis, TX</div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">October 3, 2026</div>
-      <div class="event-location">Stillwater RV Resort</div>
-      <div class="event-city">📍 Winona, TX</div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">October 10, 2026</div>
-      <div class="event-location">Holy Grounds Food Yard & Mercantile</div>
-      <div class="event-city">📍 Royse City, TX</div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">October 17, 2026</div>
-      <div class="event-location">The Gathering Cup</div>
-      <div class="event-city">📍 Tyler, TX</div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">October 24, 2026</div>
-      <div class="event-location">The Fun Hub with Big Bass Bingo</div>
-      <div class="event-city">📍 Yantis, TX</div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">October 31, 2026</div>
-      <div class="event-location">Circle M Crawfish</div>
-      <div class="event-city">📍 Big Sandy, TX</div>
-    </div>
-
-  </div>
-</section>
-
-<section id="vendors">
-  <h2 class="section-title">✨ Join Our Vendor Community</h2>
-  <p class="section-subtitle">
-    Whether you're just getting started or you've been in business for years,
-    we'd love to have you at the market.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="card-icon">🛍️</div>
-      <h3>Local Vendors</h3>
-      <p>
-        Showcase your products and connect face-to-face with shoppers
-        throughout East Texas.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🤝</div>
-      <h3>Community</h3>
-      <p>
-        Meet other entrepreneurs and become part of a growing local
-        business community.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📣</div>
-      <h3>Get Seen</h3>
-      <p>
-        Build your customer base and get your business in front of new
-        shoppers.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<div class="cta">
-  <h2>Ready to Shop Small?</h2>
-  <p>
-    Follow along, bring your family, invite your friends, and come support
-    the amazing small businesses in our communities.
-  </p>
-
-  <a class="button light" href="#events">Find an Event</a>
 </div>
 
+</section>
+
+
+<section class="vendor-section" id="vendors">
+
+    <h2>🛍️ Want to Become a Vendor?</h2>
+
+    <p>
+        Put your small business in front of local shoppers,
+        families, and communities across East Texas.
+    </p>
+
+    <a class="vendor-button" href="#">
+        BECOME A VENDOR →
+    </a>
+
+</section>
+
+
+<section>
+
+    <div class="cta">
+
+        <h2>Ready to Shop Small? ❤️</h2>
+
+        <p>
+            Follow along, bring your family, invite your friends,
+            and discover the amazing small businesses that make
+            our communities special.
+        </p>
+
+        <a class="vendor-button" href="#events">
+            FIND AN UPCOMING MARKET
+        </a>
+
+    </div>
+
+</section>
+
+
 <footer>
-  <p><strong>Local Vendor Market</strong></p>
-  <p>Shop Small. Support Local. ❤️</p>
-  <p>Serving East Texas & surrounding communities</p>
+
+    <h3>Local Vendor Market</h3>
+
+    <p>Shop Small. Support Local. ❤️</p>
+
+    <p>Serving East Texas & surrounding communities</p>
+
+    <p>© 2026 Local Vendor Market</p>
+
 </footer>
 
 </body>
