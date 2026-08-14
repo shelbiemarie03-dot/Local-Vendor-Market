@@ -1,85 +1,405 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Local Vendor Market</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Vendor Market | Shop Small. Support Local.</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f4ef;
+  color: #292929;
+  line-height: 1.6;
+}
+
+header {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #244b3b;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  margin-left: 16px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #244b3b, #3d6b54);
+  color: white;
+  text-align: center;
+  padding: 75px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.hero h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 28px;
+  font-size: 18px;
+}
+
+.button {
+  display: inline-block;
+  background: #d9a441;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 13px 22px;
+  border-radius: 30px;
+  margin: 5px;
+}
+
+.button.light {
+  background: white;
+  color: #244b3b;
+}
+
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.section-title {
+  text-align: center;
+  color: #244b3b;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 35px;
+  color: #666;
+}
+
+.about {
+  text-align: center;
+  background: white;
+  max-width: 900px;
+  border-radius: 20px;
+  padding: 40px 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.about p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.event {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  border-top: 5px solid #d9a441;
+}
+
+.event-date {
+  color: #244b3b;
+  font-weight: 800;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.event-location {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.event-city {
+  color: #777;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px 22px;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: #244b3b;
+  margin-bottom: 8px;
+}
+
+.cta {
+  background: #244b3b;
+  color: white;
+  text-align: center;
+  max-width: none;
+  padding: 65px 20px;
+}
+
+.cta h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  max-width: 650px;
+  margin: 0 auto 22px;
+}
+
+footer {
+  background: #1d3027;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer strong {
+  color: #d9a441;
+}
+
+@media (max-width: 650px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav a {
+    font-size: 14px;
+    margin: 0 6px;
+  }
+
+  .hero {
+    padding: 55px 18px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero h2 {
+    font-size: 21px;
+  }
+
+  .section-title {
+    font-size: 29px;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<header>
+  <div class="nav">
+    <div class="logo">🛍️ Local Vendor Market</div>
+    <div>
+      <a href="#events">Events</a>
+      <a href="#vendors">Vendors</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
   <h1>Local Vendor Market</h1>
-
   <h2>Shop Small. Support Local.</h2>
-
   <p>
-    Welcome to the Local Vendor Market!
-    We are a traveling local market bringing small businesses,
-    vendors, families, and communities together across East Texas.
+    Bringing small businesses, local vendors, families, and communities
+    together across East Texas.
   </p>
 
-  <h2>🛍️ Upcoming Events</h2>
+  <a class="button" href="#events">See Upcoming Events</a>
+  <a class="button light" href="#vendors">Become a Vendor</a>
+</section>
 
-  <p><strong>September 5, 2026</strong><br>
-  Stillwater RV Resort — Winona, TX</p>
+<section id="about">
+  <div class="about">
+    <h2 class="section-title">More Than a Market ❤️</h2>
 
-  <p><strong>September 12, 2026</strong><br>
-  Henderson Civic Center — Henderson, TX</p>
+    <p>
+      Local Vendor Market is a traveling local market created to give
+      small businesses a place to connect with their communities,
+      showcase what they offer, and grow.
+    </p>
 
-  <p><strong>September 19, 2026</strong><br>
-  Holy Grounds Food Yard & Mercantile — Royse City, TX</p>
+    <p>
+      We believe in shopping small, supporting local, and creating
+      opportunities for entrepreneurs across East Texas.
+    </p>
 
-  <p><strong>September 26, 2026</strong><br>
-  The Fun Hub with Big Bass Bingo — Yantis, TX</p>
+    <p><strong>Christian & Veteran Owned</strong></p>
+  </div>
+</section>
 
-  <p><strong>October 3, 2026</strong><br>
-  Stillwater RV Resort — Winona, TX</p>
-
-  <p><strong>October 10, 2026</strong><br>
-  Holy Grounds Food Yard & Mercantile — Royse City, TX</p>
-
-  <p><strong>October 17, 2026</strong><br>
-  The Gathering Cup — Tyler, TX</p>
-
-  <p><strong>October 24, 2026</strong><br>
-  The Fun Hub with Big Bass Bingo — Yantis, TX</p>
-
-  <p><strong>October 31, 2026</strong><br>
-  Circle M Crawfish — Big Sandy, TX</p>
-
-  <p><strong>November 7, 2026</strong><br>
-  Stillwater RV Resort — Winona, TX</p>
-
-  <p><strong>November 14, 2026</strong><br>
-  Bear Creek Smokehouse — Marshall, TX</p>
-
-  <p><strong>November 21, 2026</strong><br>
-  Holy Grounds Food Yard & Mercantile — Royse City, TX</p>
-
-  <p><strong>November 28, 2026</strong><br>
-  The Fun Hub with Big Bass Bingo — Yantis, TX</p>
-
-  <p><strong>December 12, 2026</strong><br>
-  Holy Grounds Food Yard & Mercantile — Royse City, TX</p>
-
-  <p><strong>December 19, 2026</strong><br>
-  Stillwater RV Resort — Winona, TX</p>
-
-  <p><strong>December 26, 2026</strong><br>
-  Circle M Crawfish — Big Sandy, TX</p>
-
-  <h2>📲 Become a Vendor</h2>
-
-  <p>
-    Interested in joining one of our upcoming markets?
-    We'd love to have you!
+<section id="events">
+  <h2 class="section-title">🛍️ Upcoming Events</h2>
+  <p class="section-subtitle">
+    Mark your calendar and come shop with your favorite local businesses!
   </p>
 
-  <p><strong>Text:</strong> 903-530-0362</p>
+  <div class="events">
 
-  <p><strong>Email:</strong> TheLocalVendorMarket@gmail.com</p>
+    <div class="event">
+      <div class="event-date">September 5, 2026</div>
+      <div class="event-location">Stillwater RV Resort</div>
+      <div class="event-city">📍 Winona, TX</div>
+    </div>
 
-  <h2>❤️ Shop Small. Support Local.</h2>
+    <div class="event">
+      <div class="event-date">September 12, 2026</div>
+      <div class="event-location">Henderson Civic Center</div>
+      <div class="event-city">📍 Henderson, TX</div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">September 19, 2026</div>
+      <div class="event-location">Holy Grounds Food Yard & Mercantile</div>
+      <div class="event-city">📍 Royse City, TX</div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">September 26, 2026</div>
+      <div class="event-location">The Fun Hub with Big Bass Bingo</div>
+      <div class="event-city">📍 Yantis, TX</div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">October 3, 2026</div>
+      <div class="event-location">Stillwater RV Resort</div>
+      <div class="event-city">📍 Winona, TX</div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">October 10, 2026</div>
+      <div class="event-location">Holy Grounds Food Yard & Mercantile</div>
+      <div class="event-city">📍 Royse City, TX</div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">October 17, 2026</div>
+      <div class="event-location">The Gathering Cup</div>
+      <div class="event-city">📍 Tyler, TX</div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">October 24, 2026</div>
+      <div class="event-location">The Fun Hub with Big Bass Bingo</div>
+      <div class="event-city">📍 Yantis, TX</div>
+    </div>
+
+    <div class="event">
+      <div class="event-date">October 31, 2026</div>
+      <div class="event-location">Circle M Crawfish</div>
+      <div class="event-city">📍 Big Sandy, TX</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="vendors">
+  <h2 class="section-title">✨ Join Our Vendor Community</h2>
+  <p class="section-subtitle">
+    Whether you're just getting started or you've been in business for years,
+    we'd love to have you at the market.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon">🛍️</div>
+      <h3>Local Vendors</h3>
+      <p>
+        Showcase your products and connect face-to-face with shoppers
+        throughout East Texas.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>Community</h3>
+      <p>
+        Meet other entrepreneurs and become part of a growing local
+        business community.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📣</div>
+      <h3>Get Seen</h3>
+      <p>
+        Build your customer base and get your business in front of new
+        shoppers.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Ready to Shop Small?</h2>
+  <p>
+    Follow along, bring your family, invite your friends, and come support
+    the amazing small businesses in our communities.
+  </p>
+
+  <a class="button light" href="#events">Find an Event</a>
+</div>
+
+<footer>
+  <p><strong>Local Vendor Market</strong></p>
+  <p>Shop Small. Support Local. ❤️</p>
+  <p>Serving East Texas & surrounding communities</p>
+</footer>
 
 </body>
 </html>
